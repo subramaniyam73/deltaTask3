@@ -1,0 +1,33 @@
+<%- include('partials/header') %>
+
+<%- include("partials/navBar")%>
+
+<h1 class="pageHeading">Invitation</h1>
+<div class="totalBox">
+
+  <form action="/reply" method="post">
+    <label for="extraNumber">Number of additional members:</label><br><br>
+    <input  autocomplete="off" type="number" min="0" class="input2" name="extraNumber" id="extraNumber"><br><br>
+    <input  autocomplete="off" type="text" class="input2" name="foodPreferences" placeholder="Enter your Food Preferences"><br><br>
+    <input  autocomplete="off" type="text" class="input2" name="comments" placeholder="Comments :"><br><br>
+    <input type="submit" class="dashButtons3" style="background-color:green" name="replyValue" value="Accept" placeholder="Accept">
+    <input type="submit" class="dashButtons3" style="background-color:red" name="replyValue" value="Reject" placeholder="Reject" >
+    <input type="hidden" name="eventId" value="<%=event._id%>" >
+  </form>
+
+  <div class="detailsContainer3">
+    <span class="detailsHeading3">Event Date:</span>
+    <p class="detailsValue3" ><%=event.dateString%></p><br>
+    <span class="detailsHeading3">Deadline:</span>
+    <p class="detailsValue3" ><%=event.deadlineString%></p><br>
+    <span class="detailsHeading3">Host:</span>
+    <p class="detailsValue3" ><%=event.hostMail%></p>
+
+  </div>
+  <%-include('partials/block')%>
+  <form action="/details2" method="post">
+    <input type="hidden" name="eventDetail" value="<%=event._id%>">
+    <button type="submit" name="moreDetail" class="dashButtons">Details of members</button>
+  </form>
+</div>
+<%- include('partials/footer') %>

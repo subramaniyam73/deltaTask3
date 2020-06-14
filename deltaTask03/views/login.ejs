@@ -1,0 +1,25 @@
+<%- include('partials/header') %>
+<ul class="topnav">
+  <li><a href="/">Home</a></li>
+  <li><a href="/dashBoard">Dashboard</a></li>
+  <li><a href="/notifications">Notifications()</a></li>
+  <li><a href="/submit">Create Invitation</a></li>
+  <li><a href="/logout">Logout</a></li>
+</ul>
+<div class="loginHeadingBox">
+
+</div>
+<h1 class="pageHeading">Login</h1>
+<form action="/login" method="POST">
+  <div class="loginBox">
+
+    <input type="email" class="loginText" name="username" autocomplete="off" required placeholder="Email">
+    <input type="password" class="loginText" name="password" autocomplete="off" required placeholder="Password"><br>
+    <button type="submit" class="loginButton">Login</button>
+  </div>
+
+
+</form>
+
+
+<%- include('partials/footer') %>

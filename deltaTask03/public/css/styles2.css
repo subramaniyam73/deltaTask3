@@ -1,0 +1,327 @@
+.submitTitle{
+  text-align: center;
+  font-size: 400%;
+  color: white;
+  font-family: "Lobster",cursive;
+
+}
+input[type="radio"]{
+  transform: scale(2);
+  margin: 10px;
+
+}
+input[type="color"]{
+  width: 15%;
+  border: none;
+  background-color: #272727;
+}
+.radioBox{
+  width: 60%;
+  text-align: center;
+  font-size: 150%;
+  font-family: 'Roboto',sans-serif;
+  border:solid 7px #393e46 ;
+  box-sizing: border-box;
+  padding-bottom: 20px;
+  margin: 0 auto;
+  color:white;
+}
+.submitElement{
+  font-size: 150%;
+  font-family: 'Roboto',sans-serif;
+  color: white;
+}
+.numberInput{
+  width: 10%;
+  font-size: 100%;
+  font-family: 'Roboto',sans-serif;
+  color: black;
+  border : solid 6px #393e46;
+  padding : 10px 10px;
+  margin  : 15px 0 0 0;
+  background-color:white;
+  box-sizing: border-box;
+  outline: none;
+  text-align: center;
+}
+
+.formBox{
+  width: 70%;
+  box-sizing: border-box;
+  border: solid 6px #393e46;
+  text-align: center;
+  font-size: 150%;
+  font-family: 'Roboto',sans-serif;
+  margin: 0 auto;
+}
+input[type="date"]{
+  width: 35%;
+  font-size: 100%;
+  border: solid 6px #393e46;
+  background-color: #ffd31d;
+  box-sizing: border-box;
+  outline: none;
+  color:black;
+  padding: 20px;
+}
+.header,.body,.footer{
+  width: 80%;
+  font-size: 100%;
+  font-family: 'Roboto',sans-serif;
+  border: solid 6px #393e46;
+  background-color: #ffd31d;
+  box-sizing: border-box;
+  color: black;
+  outline: none;
+  padding: 20px;
+}
+.header:focus,.body:focus,.footer:focus,.emailEntry:focus,input[type="date"]:focus{
+  background-color: white;
+  border-color:#4CAF50;
+}
+.emailEntry{
+  font-size: 100%;
+  font-family: 'Roboto',sans-serif;
+  box-sizing: border-box;
+  border:solid 6px #393e46;
+  background-color: #ffd31d;
+  outline: none;
+  color:black;
+  padding: 20px;
+  margin-top: 20px;
+}
+.emailEntry::placeholder,.header::placeholder,.body::placeholder,.footer::placeholder{
+  color: black;
+}
+.submitValues{
+  display: inline-block;
+  font-size: 200%;
+  font-family: 'Roboto',sans-serif;
+  color: black;
+  margin-left: 2%;
+  border:solid 4px #393e46;
+  background-color: white;
+  padding: 5px 5px;
+}
+.submitValues:focus{
+  background-color: white;
+  border-color: #4CAF50;
+  color: black;
+}
+.totalBox{
+  width: 100%;
+  font-size: 150%;
+  font-family: 'Roboto',sans-serif;
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  text-align: center;
+}
+.input2{
+  width: 40%;
+  font-size: 100%;
+  font-family: 'Roboto',sans-serif;
+  border: solid 6px #ffd31d;
+  background-color: #ffd31d;
+  box-sizing: border-box;
+  color: black;
+  outline: none;
+  padding: 15px;
+
+}
+.input2:focus{
+  background-color: white;
+  border-color: #4CAF50;
+  /* border: solid 4px #ffd31d; */
+  /* box-shadow: 0 0 10px 5px #ffd31d; */
+  /* border-color: #4CAF50; */
+  color: black;
+}
+.input2::placeholder{
+  text-align: center;
+  color: black;
+}
+.acceptButton{
+  width: 10%;
+  font-family: 'Roboto',sans-serif;
+  /* font-family: 'Balsamiq Sans', cursive; */
+  font-size: 100%;
+  color: black;
+  border:none;
+  border-radius: 0;
+  cursor: pointer;
+  margin:15px;
+  padding: 15px;
+  font-weight: 200;
+}
+.acceptButton:hover{
+  /* opacity: 0.5; */
+  color: white;
+}
+.homeHeading{
+  font-size: 600%;
+  text-align: center;
+  font-family: 'Bungee Inline', cursive;
+  animation-name: fontColor;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  margin-top: 1%;
+  margin-bottom: 2%;
+}
+.homeSub{
+  font-size: 300%;
+  text-align: center;
+  font-family: 'Bungee Inline', cursive;
+  animation-name: fontColor;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  margin-top: 1%;
+}
+@keyframes fontColor {
+  0%{color:white;}
+  25%{color:#FF0181;}
+	50%{color:#900DFF;}
+	75%{color:#32DBF0;}
+  100%{color:#FAE100;}
+}
+.homeButton{
+  text-align: center;
+  padding: 30px;
+  border: solid 4px white;
+  font-family: 'Bungee Inline', cursive;
+  font-size: 300%;
+  text-decoration: none;
+  color: white;
+  margin: 20px;
+  box-sizing: border-box;
+}
+.homeButton:hover{
+  animation-name: hoverEffect;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  color: white;
+}
+@keyframes hoverEffect {
+  0%{background-color:#FF0181;/*text-shadow: 1px 1px 8px white*/;border-color: #FF0181;}
+	50%{background-color:#900DFF;/*text-shadow: 1px 1px 8px white*/;border-color: #900DFF;}
+  100%{background-color:#FF0181;/*text-shadow: 1px 1px 8px white*/;border-color: #FF0181;}
+}
+.homeButtonBox{
+  text-align: center;
+  width: 100%;
+  margin-top: 15%;
+}
+.message{
+  text-align: center;
+  font-size: 300%;
+  font-family: 'Michroma', sans-serif;
+  font-weight: 600;
+  margin-top: 10%;
+  color:white;
+}
+.pageHeading{
+  font-size: 500%;
+  text-align: center;
+  font-family: 'Bungee Inline', cursive;
+  /* animation-name: fontColor;
+  animation-duration: 3s;
+  animation-iteration-count: infinite; */
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color:white;
+}
+.dashButtons{
+  display: inline-block;
+  font-size: 150%;
+  width: 20%;
+  background-color: blue;
+  color: white;
+  box-sizing: border-box;
+  padding: 10px 10px;
+  font-family: "Righteous",cursive;
+  text-decoration: none;
+  border-radius: 5px;
+  outline:none;
+  border: none;
+  margin-bottom: 70px;
+}
+.dashButtons:hover{
+  background-color: red;
+}
+.dashButtons2{
+  display: block;
+  font-size: 200%;
+  width: 30%;
+  background-color: blue;
+  color: white;
+  box-sizing: border-box;
+  font-family: "Righteous",cursive;
+  text-decoration: none;
+  border-radius: 5px;
+  outline:none;
+  border: none;
+  margin: 70px auto;
+  margin-bottom: 70px;
+  padding: 20px;
+}
+.dashButtons2:hover{
+  background-color: red;
+}
+.dashButtons3{
+  display: inline-block;
+  font-size: 100%;
+  width: 17%;
+  background-color: blue;
+  color: white;
+  box-sizing: border-box;
+  font-family: "Righteous",cursive;
+  text-decoration: none;
+  border-radius: 5px;
+  outline:none;
+  border: none;
+  margin: 10px 10px;
+  margin-bottom: 70px;
+  padding: 15px;
+  cursor:pointer;
+}
+.dashButtons3:hover{
+  background-color: red;
+}
+.selectMenu,.numberInput{
+  width: 20%;
+  font-size: 1.3rem;
+  padding: 10px;
+  box-sizing: border-box;
+  border: solid 6px #ffd31d;
+  background-color: #ffd31d;
+  outline: none;
+  cursor:pointer;
+
+}
+.numberInput{
+  width: 10%;
+}
+input[type="color"]{
+  width: 20%;
+  padding: 0;
+  background-color: none;
+  border:none;
+  outline:none;
+  margin: 0;
+}
+
+.selectMenu:focus,.numberInput:focus{
+  border-color: #4CAF50;
+  color: black;
+  background-color: white;
+}
+.options{
+  width: 20%;
+  font-size: 1.3rem;
+  padding: 10px;
+  box-sizing: border-box;
+  border: solid 6px #ffd31d;
+  background-color: #ffd31d;
+  outline: none;
+  cursor:pointer;
+}

@@ -1,0 +1,111 @@
+<%- include('partials/header') %>
+<!-- <ul class="topnav">
+  <li><a href="/">Home</a></li>
+  <li><a href="/secrets">Dashboard</a></li>
+  <li><a href="/notifications">Notifications(<%=notification.accepted.length+notification.requests.length%>)</a></li>
+  <li><a  href="/applyStyle">Create Invitation</a></li>
+  <li><a href="/logout">Logout</a></li>
+</ul> -->
+<%- include("partials/navBar")%>
+<h2 class="pageHeading">Create a new Invitation</h2>
+<%if(colorValue==""){%>
+  <form action="/applyStyle" method="post">
+
+    <div class="radioBox">
+      <p class="center submitElement">Choose the font color:<br>(choose a lighter color for better effect)</p>
+      <input required type="color" name="colorValue" class="colorInput" id="colorValue"><br><br>
+      <p class="center submitElement">Font Type:<br>(Applies for template=none)</p>
+      <select name="fontValue" class="selectMenu" required>
+        <option class="options" value="0" selected>Roboto</option>
+        <option value="1">Kelly Slab</option>
+        <option value="2">Righteous</option>
+        <option value="3">Lobster Two</option>
+        <option value="4">Dancing Script</option>
+        <option value="5">Bungee</option>
+        <option value="6">Michroma</option>
+        <option value="7">Satisfy</option>
+        <option value="8">Shojumaru</option>
+        <option value="9">Sriracha</option>
+
+      </select><br><br>
+      <p class="center submitElement">Number of users to be invited:</p>
+      <input required type="number" min="1" name="numberOfUsers" id="numberOfUsers" class="numberInput" ><br>
+      <p class="center submitElement">Choose template:</p><br>
+      <select name="template" class="selectMenu">
+        <option value="0" selected>None</option>
+        <option value="1">Wedding</option>
+        <option value="2">Birthday</option>
+        <option value="3">Funeral</option>
+      </select><br><br>
+      <button type="submit" name="applyStyle" class="dashButtons">Next Step</button>
+    </div><br>
+
+  </form>
+<%}else{%>
+  <form action="/submit" method="POST">
+    <div class="formBox">
+      <%if(template=="0"){%>
+        <p>Event Date:</p><br>
+        <input type="date" name="date" id="eventDate" required><br>
+        <p>Deadline:</p><br>
+        <input type="date" name="deadline" id="deadline" required><br><br>
+        <input type="text" autocomplete="off" class="header" name="header" placeholder="Header" style="color:<%=colorValue%>;font-family:<%=fontValue%>" autocomplete="off" required><br><br>
+        <textarea autocomplete="off" name="body" class="body" rows="8" cols="80" placeholder="Body" class="" style="color:<%=colorValue%>;font-family:<%=fontValue%>" autocomplete="off" required></textarea autocomplete="off"><br><br>
+        <input type="text" autocomplete="off" class="footer" name="footer" placeholder="Footer" style="color:<%=colorValue%>;font-family:<%=fontValue%>" autocomplete="off" required><br><br>
+
+      <%}else if(template=="1"){%>
+        <p>Wedding Date:</p><br>
+        <input type="date" name="date" id="eventDate" required><br>
+        <p>Deadline:</p><br>
+        <input type="date"  name="deadline" id="deadline" required><br><br>
+        <input type="text" autocomplete="off" class="header" name="name" placeholder="Bride Name" required><br><br>
+        <input type="text" autocomplete="off" class="header" name="name2" placeholder="Bridegroom Name" required><br><br>
+        <input type="text" autocomplete="off" class="header" name="time" placeholder="Time" required><br><br>
+        <textarea autocomplete="off" name="address" class="body" rows="4" cols="80" placeholder="Address of the Wedding" required></textarea autocomplete="off"><br><br>
+        <textarea autocomplete="off" name="otherDetails" class="body" rows="4" cols="80" placeholder="Other Details" required></textarea autocomplete="off"><br><br>
+
+      <%}else if(template=="2"){%>
+        <p>Birthday Date:</p><br>
+        <input type="date" name="date" id="eventDate" required><br>
+        <p>Deadline:</p><br>
+        <input type="date" name="deadline" id="deadline" required><br><br>
+        <input type="text" autocomplete="off" class="header" name="name" placeholder="Name of Birthday boy/girl" required><br><br>
+        <input type="text" autocomplete="off" class="header" name="time" placeholder="Time of Event" required><br><br>
+        <textarea autocomplete="off" name="address" class="body" rows="4" cols="80" placeholder="Address of the Party" required></textarea autocomplete="off"><br><br>
+        <textarea autocomplete="off" name="otherDetails" class="body" rows="4" cols="80" placeholder="Other Details" required></textarea autocomplete="off"><br><br>
+
+      <%}else{%>
+        <p>Event Date:</p><br>
+        <input type="date" name="date" id="eventDate" required><br>
+        <p>Birth Date:</p><br>
+        <input type="date" name="date2" required><br>
+        <p>Deadline:</p><br>
+        <input type="date" name="deadline" id="deadline" required><br><br>
+        <input type="text" autocomplete="off" class="header" name="name" placeholder="Name of the person:" required><br><br>
+        <input type="text" autocomplete="off" class="header" name="time" placeholder="Time of Event" required><br><br>
+        <textarea autocomplete="off" name="address" class="body" rows="4" cols="80" placeholder="Address of the Event" required></textarea autocomplete="off"><br><br>
+        <textarea autocomplete="off" name="otherDetails" class="body" rows="4" cols="80" placeholder="Other Details" required></textarea autocomplete="off"><br><br>
+
+      <%}%>
+      <input type="hidden" name="colorValue" value="<%=colorValue%>">
+      <input type="hidden" name="numberOfUsers" value="<%numberOfUsers%>">
+      <input type="hidden" name="fontValue" value="<%=fontValue%>">
+      <input type="hidden" name="template" value="<%=template%>">
+      <p>Private Event ?</p>
+      <label for="private1">No</label>
+      <input type="radio" name="private" value="false" id="private1" required>
+      <label for="private2" >Yes</label>
+      <input type="radio" name="private" value="true" id="private2" required><br>
+      <p>Users to be invited :<br>Note: 1)In case of private event only these users will be allowed.<br>2)This invitation will be sent to all these users.<br>3)Make sure these users are registered.</p>
+      <%for(var i=0;i<numberOfUsers;i++){%>
+        <br>
+        <input type="email" class="emailEntry" name="user[]" placeholder="Email of User <%=i+1%>" required autocomplete="off">
+      <%}%>
+      <br><br>
+      <button type="submit" class="dashButtons">Create Invitation</button>
+    </div>
+
+  </form>
+<%}%>
+
+<%- include('partials/footer') %>

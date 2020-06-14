@@ -1,0 +1,19 @@
+<%- include('partials/header') %>
+
+<form action="/sendInvitation" method="post">
+  <input type="email" name="searchUser" placeholder="Enter email of the User" autocomplete="off" required>
+  <%eventsArray.forEach(function(current){%>
+    <p style="color:<%=current.colorValue%>;font-family:<%=current.fontValue%>">Event Date:</p>
+    <p style="color:<%=current.colorValue%>;font-family:<%=current.fontValue%>"><%=current.date%></p>
+    <p style="color:<%=current.colorValue%>;font-family:<%=current.fontValue%>">Deadline:</p>
+    <p style="color:<%=current.colorValue%>;font-family:<%=current.fontValue%>"><%=current.deadline%></p>
+    <p style="color:<%=current.colorValue%>;font-family:<%=current.fontValue%>"><%=current.header%></p>
+    <input type="radio" id="selectedEvent" name="selectedEvent" value="<%=current._id%>">
+    <label for="selectedEvent">Select this event</label>
+    <hr style="width:50%;height:7px;background-color:red">
+  <%});%>
+  <button type="submit" name="submit" class="">Send Invitation</button>
+</form>
+
+
+<%- include('partials/footer') %>

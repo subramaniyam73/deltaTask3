@@ -1,0 +1,28 @@
+<%- include("partials/header") %>
+<%- include("partials/navBar") %>
+<h1 class="pageHeading">Notifications</h1>
+<div class="notifications">
+  <%if(notification.status==1){%>
+    <%notification.accepted.forEach(function(current){%>
+      <div class="detailsContainer2">
+        <form action="/details" method="post">
+          <input type="hidden" name="userDetail" value="<%=current.username%>">
+          <button type="submit" name="eventDetail" value="<%=current.eventId%>" class="button1">More Details</button>
+        </form>
+        <p><%=current.username%> accepted your <a href="/<%=current.eventId%>">invitation</a> !</p>
+      </div>
+    <%});%>
+    <%notification.requests.forEach(function(current){%>
+      <div class="detailsContainer2">
+        <p><%=current.username%> sent you an <a href="/<%=current.eventId%>">invitation</a> !</p>
+      </div>
+    <%});%>
+  <%}%>
+
+</div>
+<br><br>
+<form action="/clearAll" method="post">
+  <button type="submit" class="dashButtons2" name="button">Clear All Notifications</button>
+</form>
+
+<%- include("partials/footer")  %>

@@ -1,0 +1,138 @@
+@media screen and (max-width: 600px) {
+  ul.topnav li {
+    float: none;
+    font-size: 100%;
+    width: 100%;
+    /* border: solid 2px #4CAF50; */
+    /* border-bottom: solid 2px #4CAF50; */
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0 auto;
+  }
+  ul.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    /* #393e46 */
+    width: 75%;
+    cursor: pointer;
+    margin: 0 auto;
+    border: solid 4px #4CAF50;
+  }
+  .homeHeading,.homeSub{
+    margin-top: 20px;
+    font-size: 260%;
+  }
+  .homeButton{
+    font-size: 200%;
+    display: block;
+    box-sizing: border-box;
+    padding: 10px;
+  }
+  .pageHeading{
+    font-size: 300%;
+  }
+  .loginBox{
+    width: 90%;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px;
+
+  }
+  .loginText{
+    width: 90%;
+    font-size: 120%;
+    padding: 15px;
+  }
+  .loginButton{
+    width: 90%;
+    padding: 10px;
+  }
+  .heading2{
+    font-size: 175%;
+  }
+  .detailsContainer2{
+    width: 80%;
+    padding: 10px;
+  }
+  .detailsHeading2,.detailsValue2{
+    font-size: 150%;
+    margin: 0;
+  }
+  .viewInvitation{
+    width: 75%;
+  }
+  input[type="number"]{
+    width: 80%;
+    font-size: 100%;
+  }
+  .input2{
+    width: 80%;
+    font-size: 100%;
+  }
+  .dashButtons3{
+    width: 40%;
+
+  }
+  .detailsContainer3{
+    width: 80%;
+    text-align: center;
+  }
+  .detailsHeading3{
+    font-size: 100%;
+    margin: 0;
+  }
+  .detailsValue3{
+    font-size: 100%;
+    display: block;
+    padding: 1px;
+    margin:0;
+
+  }
+  /* p { word-break: break-all } */
+  p{
+    word-break: break-word;
+  }
+  .templateFont{
+    font-size: 100%;
+  }
+  .templateFont2{
+    font-size: 140%;
+  }
+  .dashButtons{
+    width: 80%;
+  }
+  .detailsContainer{
+    width: 80%;
+  }
+  .detailsHeading,.detailsValue{
+    font-size: 150%;
+    margin: 0;
+  }
+  .message{
+    font-size: 200%;
+    padding: 10px;
+  }
+  .radioBox{
+    /* width: 80%; */
+    width: 90%;
+    font-size: 100%;
+  }
+  .selectMenu,input[type="color"]{
+    width: 80%;
+  }
+  .formBox{
+    width: 90%;
+    font-size: 125%;
+  }
+  input[type="date"],.header,.body,.footer{
+    width: 80%;
+  }
+  .dashButtons2{
+    width: 75%;
+    font-size: 200%;
+  }
+
+}

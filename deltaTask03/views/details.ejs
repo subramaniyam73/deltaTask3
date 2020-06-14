@@ -1,0 +1,20 @@
+<%- include('partials/header') %>
+
+<%- include("partials/navBar")%>
+<div class="detailsContainer">
+  <span class="detailsHeading">Username:</span>
+  <p class="detailsValue"><%=event.username%></p><br>
+  <span class="detailsHeading">Additional Members:</span>
+  <p class="detailsValue"><%=event.extraNumber%></p><br>
+  <span class="detailsHeading">Food Preferences:</span>
+  <p class="detailsValue"><%=event.foodPreferences%></p><br>
+  <span class="detailsHeading">Comments:</span>
+  <p class="detailsValue"><%=event.comments%></p><br>
+
+
+</div>
+
+
+
+
+<%- include('partials/footer') %>

@@ -1,0 +1,74 @@
+
+<%if(event.type=="0"){%>
+  <span style="font-size:150%">Header:</span>
+  <div class="detailsContainer3" style="text-align:center">
+    <p class="detailsValue3" style="color:<%=event.colorValue%>;font-family:<%=event.fontValue%>"><%=event.header%></p>
+  </div>
+  <span style="font-size:150%">Body:</span>
+  <div class="detailsContainer3" style="text-align:center">
+    <p class="detailsValue3" style="color:<%=event.colorValue%>;font-family:<%=event.fontValue%>"><%=event.body%></p>
+  </div>
+  <span style="font-size:150%">Footer:</span>
+  <div class="detailsContainer3" style="text-align:center">
+    <p class="detailsValue3" style="color:<%=event.colorValue%>;font-family:<%=event.fontValue%>"><%=event.footer%></p>
+  </div><br>
+<%}else if(event.type=="1"){%>
+  <div class="detailsContainer3">
+    <p class="templateFont"><br>
+      With great pleasure<br>
+      <span class="templateFont2"><%=event.template.name%></span><br>
+      and<br>
+      <span class="templateFont2"><%=event.template.name2%></span><br>
+      invite you to join them<br>
+      at the celebration of their marriage<br>
+      <span class="templateFont2"><%=event.dateString%></span><br>
+      at <span class="templateFont2"><%=event.template.time%></span><br>
+      Address:<br>
+      <span class="templateFont2"><%=event.template.address%></span><br>
+    </p>
+  </div>
+  <span style="font-size:150%">Other Details:</span>
+  <div class="detailsContainer3">
+    <p class="templateFont"><%=event.template.otherDetails%></p>
+  </div>
+<%}else if(event.type=="2"){%>
+  <div class="detailsContainer3">
+    <p class="templateFont">
+      Spring has sprung<br>
+      and bees are humming!<br>
+      We're having a party<br>
+      and hope you're coming!<br>
+      You're invited to a birthday<br>
+      party for<br>
+      <span class="templateFont2"><%=event.template.name%></span><br>
+      on <br><span class="templateFont2"><%=event.dateString%></span> <br>
+      at <span class="templateFont2">   <%=event.template.time%></span><br>
+      Address:<br>
+      <span class="templateFont2"><%=event.template.address%></span><br>
+    </p>
+  </div>
+  <span style="font-size:150%">Other Details:</span>
+  <div class="detailsContainer3">
+    <p class="templateFont"><%=event.template.otherDetails%></p>
+  </div>
+
+<%}else {%>
+  <div class="detailsContainer3">
+    <p class="templateFont">
+      In loving memory of <span class="templateFont2"><%=event.template.name%></span><br>
+      <span class="templateFont2"><%=event.template.date2String%></span><br>
+      Please join us for a memorial service honoring the life of <span class="templateFont2"><%=event.template.name%></span><br>
+      Date and Time:<br>
+      <span class="templateFont2"><%=event.dateString%></span> at <span class="templateFont2"><%=event.template.time%></span><br>
+      Address:<br>
+      <span class="templateFont2"><%=event.template.address%></span><br>
+
+    </p>
+
+  </div>
+  <span style="font-size:150%">Other Details:</span>
+  <div class="detailsContainer3">
+    <p class="templateFont"><%=event.template.otherDetails%></p>
+  </div>
+
+<%}%>

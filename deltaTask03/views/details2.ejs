@@ -1,0 +1,22 @@
+<%- include('partials/header') %>
+
+<%- include("partials/navBar")%>
+<%membersArray.forEach(function(current){%>
+  <div class="detailsContainer">
+    <span class="detailsHeading">Username:</span>
+    <p class="detailsValue"><%=current.username%></p><br>
+    <span class="detailsHeading">Additional Members:</span>
+    <p class="detailsValue"><%=current.extraNumber%></p><br>
+    <span class="detailsHeading">Food Preferences:</span>
+    <p class="detailsValue"><%=current.foodPreferences%></p><br>
+    <span class="detailsHeading">Comments:</span>
+    <p class="detailsValue"><%=current.comments%></p><br>
+
+  </div>
+<%});%>
+
+
+
+
+
+<%- include('partials/footer') %>

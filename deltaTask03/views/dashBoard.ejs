@@ -1,0 +1,78 @@
+<%- include('partials/header') %>
+
+<%- include("partials/navBar")%>
+
+<h1 class="pageHeading">Dashboard</h1>
+<h2 class="heading2 q1">Your Events( <span style="color:red"><%=eventsArray.length%></span> )</h2>
+<div class="a1">
+  <%eventsArray.forEach(function(current){%>
+  <div class="detailsContainer2">
+    <span class="detailsHeading detailsHeading2">Event Date:</span>
+    <p class="detailsValue detailsValue2"><%=current.dateString%></p><br>
+    <span class="detailsHeading detailsHeading2">Deadline:</span>
+    <p class="detailsValue detailsValue2"><%=current.deadlineString%></p><br>
+    <span class="detailsHeading detailsHeading2">Host:</span>
+    <p class="detailsValue detailsValue2"><%=current.hostMail%></p><br>
+    <span class="detailsHeading detailsHeading2">Header:</span>
+    <p class="detailsValue detailsValue2"><%=current.header%></p><br>
+    <a href="/<%=current._id%>" class="viewInvitation">VIEW INVITATION</a><br>
+  </div>
+  <%});%>
+
+</div>
+
+
+<h2 class="heading2 q2">Accepted Events( <span style="color:red"><%=otherEventsArray.length%></span> )</h2>
+<div class="a2">
+  <%otherEventsArray.forEach(function(current){%>
+  <div class="detailsContainer2">
+    <span class="detailsHeading detailsHeading2">Event Date:</span>
+    <p class="detailsValue detailsValue2"><%=current.dateString%></p><br>
+    <span class="detailsHeading detailsHeading2">Deadline:</span>
+    <p class="detailsValue detailsValue2"><%=current.deadlineString%></p><br>
+    <span class="detailsHeading detailsHeading2">Header:</span>
+    <p class="detailsValue detailsValue2"><%=current.header%></p><br>
+    <a href="/<%=current._id%>" class="viewInvitation">VIEW INVITATION</a>
+  </div>
+  <%});%>
+
+</div>
+
+
+
+<h2 class="heading2 q3">Invited Events( <span style="color:red"><%=invitedEventsArray.length%></span> )</h2>
+<div class="a3">
+  <%invitedEventsArray.forEach(function(current){%>
+  <div class="detailsContainer2">
+    <span class="detailsHeading detailsHeading2">Event Date:</span>
+    <p class="detailsValue detailsValue2"><%=current.dateString%></p><br>
+    <span class="detailsHeading detailsHeading2">Deadline:</span>
+    <p class="detailsValue detailsValue2"><%=current.deadlineString%></p><br>
+    <span class="detailsHeading detailsHeading2">Header:</span>
+    <p class="detailsValue detailsValue2"><%=current.header%></p><br>
+    <a href="/<%=current._id%>" class="viewInvitation">VIEW INVITATION</a>
+  </div>
+  <%});%>
+</div>
+
+
+
+<!-- <div class="center">
+  <a class="dashButtons" href="/logout" role="button">Log Out</a><br>
+  <a class="dashButtons" href="/submit" role="button">Create Invite</a>
+
+</div> -->
+
+<script type="text/javascript">
+  document.querySelector(".q1").addEventListener("click",function(){
+    document.querySelector(".a1").classList.toggle("visible");
+  });
+  document.querySelector(".q2").addEventListener("click",function(){
+    document.querySelector(".a2").classList.toggle("visible");
+  });
+  document.querySelector(".q3").addEventListener("click",function(){
+    document.querySelector(".a3").classList.toggle("visible");
+  });
+
+</script>
+<%- include('partials/footer') %>

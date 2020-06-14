@@ -1,0 +1,249 @@
+
+body {
+  background-color: #272727;
+  color: white;
+}
+a{
+  color: red;
+}
+
+.centered {
+    padding-top: 200px;
+    text-align: center;
+}
+
+.detailsHeading{
+  display: inline-block;
+  font-size: 200%;
+  font-family: 'Roboto',sans-serif;
+  color:white;
+  line-height: 1.6;
+  /* #f54291; */
+}
+.detailsValue{
+  display: inline-block;
+  font-size: 200%;
+  font-family: 'Roboto',sans-serif;
+  color: #5fdde5;
+  margin: 0;
+  margin-left: 20px;
+  line-height: 1.6;
+  left: 50%; */
+}
+.detailsContainer{
+  border-radius: 0;
+  /* background-color: #393e46; */
+  border: solid 10px #393e46;
+  width: 50%;
+  margin: 4% auto;
+  text-align: center;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+.loginText {
+  width: 75%;
+  font-size: 150% ;
+  font-family: 'Roboto',sans-serif;
+  color: white;
+  border : solid 6px white;
+  background-color:#272727;
+  box-sizing: border-box;
+  padding: 20px;
+  outline: none;
+  margin: 10px 0;
+
+}
+.loginText:focus{
+  /* background: #2b580c; */
+  border-color: #4CAF50;
+  outline: none;
+
+}
+.loginBox{
+  width:40%;
+  /* background-color: #b6eb7a;#c060a1 #45046a #4CAF50*/
+  background-color: #393e46;
+  margin: 80px auto;
+  text-align:center;
+  /* border: solid 5px white; */
+  border-radius: 30px;
+  padding: 20px;
+}
+::placeholder{
+  color: white;
+  opacity: 1;
+}
+.loginButton{
+  font-size: 150% ;
+  font-family: 'Roboto',cursive;
+  color: white;
+  border : solid 6px #4CAF50;
+  width   : 75%;
+  background-color:#4CAF50;
+  box-sizing: border-box;
+  text-decoration: none;
+  padding: 20px;
+
+}
+.loginButton:hover{
+  /* background-color: #2b580c;
+  color: white;
+  border-color: #2b580c; */
+  border-color:white;
+}
+.loginHeading{
+  font-family: "Lobster",cursive;
+  font-size: 500%;
+  text-align: center;
+}
+.loginHeadingBox{
+  width: 30%;
+  position: absolute;
+  left: 35%;
+  top: 0;
+  text-align: center;
+}
+.notification{
+  width: 100%;
+  font-size: 300%;
+  font-family: "Righteous",cursive;
+  text-align: center;
+  border: solid 6px #4CAF50;
+  box-sizing: border-box;
+  background-color: #272727;
+  color:#4CAF50;
+  outline: none;
+}
+.notification:hover{
+  background-color: #4CAF50;
+  color: white;
+}
+.notifications{
+  text-align: center;
+  font-size: 150%;
+  background-color: #272727;
+  box-sizing: border-box;
+  border: solid 6.5px #4CAF50;
+  display: block;
+  padding-bottom: 15px;
+}
+.display{
+  display: block;
+}
+.button1{
+  font-size: 100%;
+  display: inline-block;
+  background-color: #393e46;
+  color:red;
+  border:solid 2px red;
+  box-sizing: border-box;
+  outline:none;
+}
+p{
+  display: inline-block;
+}
+.detailsContainer2{
+  border-radius: 0;
+  border: solid 6px #393e46;
+  width: 75%;
+  margin: 25px auto;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  text-align: center;
+
+}
+/* #79d70f
+#4CAF50 */
+.heading2{
+  font-family: "Roboto",sans-serif;
+  font-size: 250%;
+  text-align: center;
+  color: white;
+  outline: none;
+  border:solid 6px #393e46;
+  padding: 20px;
+}
+.heading2:hover{
+  border:solid 6px #4CAF50;
+  color: white;
+  box-sizing: border-box;
+  box-shadow: 0 0 10px green;
+}
+.viewInvitation{
+  display: inline-block;
+  font-size: 150%;
+  width: 20%;
+  background-color: blue;
+  color: white;
+  box-sizing: border-box;
+  padding: 10px 10px;
+  font-family: "Righteous",cursive;
+  text-decoration: none;
+  border-radius: 5px;
+  outline:none;
+  margin-top: 20px;
+}
+.viewInvitation:hover{
+  background-color: red;
+  color: white;
+}
+.detailsHeading2,.detailsValue2{
+  font-size: 200%;
+}
+
+.center{
+  width: 100%;
+  text-align: center;
+}
+.a1,.a2,.a3{
+  display: none;
+}
+.visible{
+  display: block;
+}
+
+.detailsContainer3{
+  border-radius: 0;
+  /* background-color: #393e46; */
+  border: solid 10px #393e46;
+  width: 75%;
+  margin: 25px auto;
+  text-align: left;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  text-align: center;
+}
+.detailsHeading3{
+  display: inline-block;
+  font-size: 150%;
+  font-family: 'Roboto',sans-serif;
+  /* margin: 12px; */
+  margin-left: 20px;
+  line-height: 1.6;
+}
+.detailsValue3{
+  display: inline-block;
+  font-size: 150%;
+  font-family: 'Roboto',sans-serif;
+  color: #5fdde5;
+  /* margin: 12px auto; */
+  margin: 0;
+  margin-left: 20px;
+  line-height: 1.6;
+
+}
+.templateFont{
+  font-size: 150%;
+  font-family: 'Roboto',sans-serif;
+  color: white;
+  line-height: 1.6;
+
+}
+.templateFont2{
+  font-size: 150%;
+  font-family: 'Dancing Script', cursive;
+  /* color:#4CAF50; */
+  color:#5fdde5;
+  line-height: 1.6;
+}
