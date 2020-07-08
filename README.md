@@ -6,8 +6,8 @@ node dependencies required are mentioned in the package.json file\
   Models,Views and Controllers structure
 2)Updated different names for get and post routes\
 3)Completed all Hacker ++ mode features\
-  *Google calendar API is used by Oauth2 authorization method for creating events in google calendar
-  *Emails of the Invitation can be sent- Nodemailer has been used
-  *Images can ne uploaded - Multer and GridFsStorage has been used 
-  *Attendance Tracking System has been updated for the host
+  *Google calendar API is used by Oauth2 authorization method for creating events in google calendar*/
+  *Emails of the Invitation can be sent- Nodemailer has been used*/
+  *Images can ne uploaded - Multer and GridFsStorage has been used*/ 
+  *Attendance Tracking System has been updated for the host*/
   
