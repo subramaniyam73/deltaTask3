@@ -1,15 +1,9 @@
 <%- include('partials/header') %>
-<!-- <ul class="topnav">
-  <li><a href="/">Home</a></li>
-  <li><a href="/secrets">Dashboard</a></li>
-  <li><a href="/notifications">Notifications(<%=notification.accepted.length+notification.requests.length%>)</a></li>
-  <li><a  href="/applyStyle">Create Invitation</a></li>
-  <li><a href="/logout">Logout</a></li>
-</ul> -->
 <%- include("partials/navBar")%>
 <h2 class="pageHeading">Create a new Invitation</h2>
 <%if(colorValue==""){%>
-  <form action="/applyStyle" method="post">
+  <form action="/submit/invitationStyle" method="post">
+    <input type="hidden" name="filename" value="<%=filename%>">
 
     <div class="radioBox">
       <p class="center submitElement">Choose the font color:<br>(choose a lighter color for better effect)</p>
@@ -41,12 +35,35 @@
     </div><br>
 
   </form>
+<%}else if(colorValue=="-1"){%>
+  <form action="/submit/uploadImage" method="post" enctype="multipart/form-data">
+    <div style="text-align: center;" class="fileBox">
+      <input type="file" name="file" class="fileUpload"><br>
+      <button type="submit" name="uploadImage" class="dashButtons">Upload Image</button>
+    </div>
+  </form>
+
 <%}else{%>
-  <form action="/submit" method="POST">
+  <div class="imageBox">
+    <%if(files){%>
+      <%files.forEach(function(file){%>
+        <img src="/submit/image/<%=file.filename%>" alt="Uploaded image for invitation" id="uploadImage"><br>
+      <%});%>
+    <%}%>
+  </div>
+  <form action="/submit/createInvitation" method="POST">
+    <input type="hidden" name="filename" value="<%=files[0].filename%>">
+    <div class="imageInput">
+      <input type="radio" name="objectFit" value="cover" id="objectFit1" required>
+      <p>Object-Fit: Cover</p>
+      <input type="radio" id="objectFit2" name="objectFit" value="fill" required>
+      <p>Object-Fit: Fill</p><br>
+    </div>
+
     <div class="formBox">
       <%if(template=="0"){%>
         <p>Event Date:</p><br>
-        <input type="date" name="date" id="eventDate" required><br>
+        <input type="datetime-local" name="date" id="eventDate" required><br>
         <p>Deadline:</p><br>
         <input type="date" name="deadline" id="deadline" required><br><br>
         <input type="text" autocomplete="off" class="header" name="header" placeholder="Header" style="color:<%=colorValue%>;font-family:<%=fontValue%>" autocomplete="off" required><br><br>
@@ -55,34 +72,31 @@
 
       <%}else if(template=="1"){%>
         <p>Wedding Date:</p><br>
-        <input type="date" name="date" id="eventDate" required><br>
+        <input type="datetime-local" name="date" id="eventDate" required><br>
         <p>Deadline:</p><br>
         <input type="date"  name="deadline" id="deadline" required><br><br>
         <input type="text" autocomplete="off" class="header" name="name" placeholder="Bride Name" required><br><br>
         <input type="text" autocomplete="off" class="header" name="name2" placeholder="Bridegroom Name" required><br><br>
-        <input type="text" autocomplete="off" class="header" name="time" placeholder="Time" required><br><br>
         <textarea autocomplete="off" name="address" class="body" rows="4" cols="80" placeholder="Address of the Wedding" required></textarea autocomplete="off"><br><br>
         <textarea autocomplete="off" name="otherDetails" class="body" rows="4" cols="80" placeholder="Other Details" required></textarea autocomplete="off"><br><br>
 
       <%}else if(template=="2"){%>
         <p>Birthday Date:</p><br>
-        <input type="date" name="date" id="eventDate" required><br>
+        <input type="datetime-local" name="date" id="eventDate" required><br>
         <p>Deadline:</p><br>
         <input type="date" name="deadline" id="deadline" required><br><br>
         <input type="text" autocomplete="off" class="header" name="name" placeholder="Name of Birthday boy/girl" required><br><br>
-        <input type="text" autocomplete="off" class="header" name="time" placeholder="Time of Event" required><br><br>
         <textarea autocomplete="off" name="address" class="body" rows="4" cols="80" placeholder="Address of the Party" required></textarea autocomplete="off"><br><br>
         <textarea autocomplete="off" name="otherDetails" class="body" rows="4" cols="80" placeholder="Other Details" required></textarea autocomplete="off"><br><br>
 
       <%}else{%>
         <p>Event Date:</p><br>
-        <input type="date" name="date" id="eventDate" required><br>
+        <input type="datetime-local" name="date" id="eventDate" required><br>
         <p>Birth Date:</p><br>
         <input type="date" name="date2" required><br>
         <p>Deadline:</p><br>
         <input type="date" name="deadline" id="deadline" required><br><br>
         <input type="text" autocomplete="off" class="header" name="name" placeholder="Name of the person:" required><br><br>
-        <input type="text" autocomplete="off" class="header" name="time" placeholder="Time of Event" required><br><br>
         <textarea autocomplete="off" name="address" class="body" rows="4" cols="80" placeholder="Address of the Event" required></textarea autocomplete="off"><br><br>
         <textarea autocomplete="off" name="otherDetails" class="body" rows="4" cols="80" placeholder="Other Details" required></textarea autocomplete="off"><br><br>
 
@@ -96,10 +110,16 @@
       <input type="radio" name="private" value="false" id="private1" required>
       <label for="private2" >Yes</label>
       <input type="radio" name="private" value="true" id="private2" required><br>
-      <p>Users to be invited :<br>Note: 1)In case of private event only these users will be allowed.<br>2)This invitation will be sent to all these users.<br>3)Make sure these users are registered.</p>
+      <p>Users to be invited :<br>Note: 1)In case of private event only these users will be allowed.<br>2)This invitation will be sent to all these users (via this web application).<br>3)Make sure these users are registered.</p>
       <%for(var i=0;i<numberOfUsers;i++){%>
         <br>
         <input type="email" class="emailEntry" name="user[]" placeholder="Email of User <%=i+1%>" required autocomplete="off">
+      <%}%>
+      <br><br>
+      <p>Enter list of e-mail to send the invitation (via e-mail)</p>
+      <%for(var i=0;i<numberOfUsers;i++){%>
+        <br>
+        <input type="email" class="emailEntry" name="email[]" placeholder="Email of User <%=i+1%>" required autocomplete="off">
       <%}%>
       <br><br>
       <button type="submit" class="dashButtons">Create Invitation</button>
@@ -107,5 +127,21 @@
 
   </form>
 <%}%>
+
+<script>
+  document.querySelector("#objectFit1").addEventListener("click",(e)=>{
+    console.log(e);
+    document.querySelector("#uploadImage").style.objectFit="cover";
+
+  });
+  document.querySelector("#objectFit2").addEventListener("click",(e)=>{
+    console.log(e);
+    document.querySelector("#uploadImage").style.objectFit="fill";
+
+  });
+
+
+
+</script>
 
 <%- include('partials/footer') %>

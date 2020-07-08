@@ -132,9 +132,6 @@ input[type="date"]{
 .input2:focus{
   background-color: white;
   border-color: #4CAF50;
-  /* border: solid 4px #ffd31d; */
-  /* box-shadow: 0 0 10px 5px #ffd31d; */
-  /* border-color: #4CAF50; */
   color: black;
 }
 .input2::placeholder{
@@ -144,7 +141,6 @@ input[type="date"]{
 .acceptButton{
   width: 10%;
   font-family: 'Roboto',sans-serif;
-  /* font-family: 'Balsamiq Sans', cursive; */
   font-size: 100%;
   color: black;
   border:none;
@@ -155,7 +151,6 @@ input[type="date"]{
   font-weight: 200;
 }
 .acceptButton:hover{
-  /* opacity: 0.5; */
   color: white;
 }
 .homeHeading{
@@ -202,9 +197,9 @@ input[type="date"]{
   color: white;
 }
 @keyframes hoverEffect {
-  0%{background-color:#FF0181;/*text-shadow: 1px 1px 8px white*/;border-color: #FF0181;}
-	50%{background-color:#900DFF;/*text-shadow: 1px 1px 8px white*/;border-color: #900DFF;}
-  100%{background-color:#FF0181;/*text-shadow: 1px 1px 8px white*/;border-color: #FF0181;}
+  0%{background-color:#FF0181;border-color: #FF0181;}
+	50%{background-color:#900DFF;border-color: #900DFF;}
+  100%{background-color:#FF0181;border-color: #FF0181;}
 }
 .homeButtonBox{
   text-align: center;
@@ -223,11 +218,16 @@ input[type="date"]{
   font-size: 500%;
   text-align: center;
   font-family: 'Bungee Inline', cursive;
-  /* animation-name: fontColor;
-  animation-duration: 3s;
-  animation-iteration-count: infinite; */
   margin-top: 20px;
   margin-bottom: 20px;
+  color:white;
+}
+.subHeading1{
+  font-size: 200%;
+  text-align: center;
+  font-family: 'Bungee Inline', cursive;
+  margin-top: 5px;
+  margin-bottom: 5px;
   color:white;
 }
 .dashButtons{

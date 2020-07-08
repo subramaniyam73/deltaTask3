@@ -5,7 +5,7 @@
 <h1 class="pageHeading">Invitation</h1>
 <div class="totalBox">
 
-  <form action="/reply" method="post">
+  <form action="/invitationReply" method="post">
     <label for="extraNumber">Number of additional members:</label><br><br>
     <input  autocomplete="off" type="number" min="0" class="input2" name="extraNumber" id="extraNumber"><br><br>
     <input  autocomplete="off" type="text" class="input2" name="foodPreferences" placeholder="Enter your Food Preferences"><br><br>
@@ -18,14 +18,17 @@
   <div class="detailsContainer3">
     <span class="detailsHeading3">Event Date:</span>
     <p class="detailsValue3" ><%=event.dateString%></p><br>
+    <span class="detailsHeading3">Event Time:</span>
+    <p class="detailsValue3" ><%=event.time%></p><br>
     <span class="detailsHeading3">Deadline:</span>
     <p class="detailsValue3" ><%=event.deadlineString%></p><br>
     <span class="detailsHeading3">Host:</span>
     <p class="detailsValue3" ><%=event.hostMail%></p>
 
   </div>
+  <img src="/submit/image/<%=event.filename%>" id="uploadImage" alt="Uploaded image for invitation" style="object-fit:<%=event.objectFit%>;"><br><br>
   <%-include('partials/block')%>
-  <form action="/details2" method="post">
+  <form action="/memberDetails" method="post">
     <input type="hidden" name="eventDetail" value="<%=event._id%>">
     <button type="submit" name="moreDetail" class="dashButtons">Details of members</button>
   </form>

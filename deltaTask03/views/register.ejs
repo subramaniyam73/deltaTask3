@@ -3,16 +3,16 @@
   <li><a href="/">Home</a></li>
   <li><a href="/dashBoard">Dashboard</a></li>
   <li><a href="/notifications">Notifications()</a></li>
-  <li><a href="/applyStyle">Create Invitation</a></li>
-  <li><a href="/logout">Logout</a></li>
+  <li><a href="/submit">Create Invitation</a></li>
+  <li><a href="/auth/logout">Logout</a></li>
 </ul>
 <h1 class="pageHeading">Register</h1>
-<form action="/register" method="POST">
+<form action="/auth/submitRegisterCredentials" method="POST">
   <div class="loginBox" style="margin-top:5%">
     <input type="email" class="loginText" name="username" autocomplete="off" required placeholder="Email ">
     <input type="password" class="loginText" name="password" autocomplete="off" required placeholder="Password">
-    <button type="submit" class="loginButton">Register</button>
-
+    <button type="submit" class="loginButton">Register</button><br>
+    
   </div>
 
 </form>

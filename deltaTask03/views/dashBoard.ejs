@@ -9,13 +9,16 @@
   <div class="detailsContainer2">
     <span class="detailsHeading detailsHeading2">Event Date:</span>
     <p class="detailsValue detailsValue2"><%=current.dateString%></p><br>
+    <span class="detailsHeading detailsHeading2">Event Time:</span>
+    <p class="detailsValue detailsValue2"><%=current.time%></p><br>
     <span class="detailsHeading detailsHeading2">Deadline:</span>
     <p class="detailsValue detailsValue2"><%=current.deadlineString%></p><br>
     <span class="detailsHeading detailsHeading2">Host:</span>
     <p class="detailsValue detailsValue2"><%=current.hostMail%></p><br>
     <span class="detailsHeading detailsHeading2">Header:</span>
     <p class="detailsValue detailsValue2"><%=current.header%></p><br>
-    <a href="/<%=current._id%>" class="viewInvitation">VIEW INVITATION</a><br>
+    <a href="/events/<%=current._id%>" class="viewInvitation">VIEW INVITATION</a><br>
+    <a href="/events/<%=current._id%>/attendance" class="viewInvitation">TAKE ATTENDANCE</a>
   </div>
   <%});%>
 
@@ -28,11 +31,13 @@
   <div class="detailsContainer2">
     <span class="detailsHeading detailsHeading2">Event Date:</span>
     <p class="detailsValue detailsValue2"><%=current.dateString%></p><br>
+    <span class="detailsHeading detailsHeading2">Event Time:</span>
+    <p class="detailsValue detailsValue2"><%=current.time%></p><br>
     <span class="detailsHeading detailsHeading2">Deadline:</span>
     <p class="detailsValue detailsValue2"><%=current.deadlineString%></p><br>
     <span class="detailsHeading detailsHeading2">Header:</span>
     <p class="detailsValue detailsValue2"><%=current.header%></p><br>
-    <a href="/<%=current._id%>" class="viewInvitation">VIEW INVITATION</a>
+    <a href="/events/<%=current._id%>" class="viewInvitation">VIEW INVITATION</a>
   </div>
   <%});%>
 
@@ -46,22 +51,23 @@
   <div class="detailsContainer2">
     <span class="detailsHeading detailsHeading2">Event Date:</span>
     <p class="detailsValue detailsValue2"><%=current.dateString%></p><br>
+    <span class="detailsHeading detailsHeading2">Event Time:</span>
+    <p class="detailsValue detailsValue2"><%=current.time%></p><br>
     <span class="detailsHeading detailsHeading2">Deadline:</span>
     <p class="detailsValue detailsValue2"><%=current.deadlineString%></p><br>
     <span class="detailsHeading detailsHeading2">Header:</span>
     <p class="detailsValue detailsValue2"><%=current.header%></p><br>
-    <a href="/<%=current._id%>" class="viewInvitation">VIEW INVITATION</a>
+    <a href="/events/<%=current._id%>" class="viewInvitation">VIEW INVITATION</a>
   </div>
   <%});%>
 </div>
+<%if(!googleId){%>
+  <p id="linkGoogleText" class="generalText" >Click the below button to link with your google account !</p><br>
+  <a href="/auth/google" class="dashButtons2" id="linkGoogle" style="margin-top: 10px;">Link with Google Account</a>
+<%}else{%>
+  <p id="linkGoogleText" class="generalText" >Your google account has been linked !</p><br>
 
-
-
-<!-- <div class="center">
-  <a class="dashButtons" href="/logout" role="button">Log Out</a><br>
-  <a class="dashButtons" href="/submit" role="button">Create Invite</a>
-
-</div> -->
+<%}%>
 
 <script type="text/javascript">
   document.querySelector(".q1").addEventListener("click",function(){
@@ -73,6 +79,7 @@
   document.querySelector(".q3").addEventListener("click",function(){
     document.querySelector(".a3").classList.toggle("visible");
   });
+
 
 </script>
 <%- include('partials/footer') %>

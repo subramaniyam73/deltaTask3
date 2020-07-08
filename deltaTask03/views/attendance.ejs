@@ -1,0 +1,28 @@
+<%-include("partials/header")%>
+<%-include("partials/navBar")%>
+
+<h1 class="pageHeading">Attendance</h1>
+<div class="detailsContainer">
+  <h3 class="detailsHeading">NOT ATTENDED</h3>
+  <form action="/updateAttendance" method="post">
+    <input type="hidden" name="eventId" value="<%=event._id%>">
+    <%event.naList.forEach(function(member){%>
+      <input class="checkBox1" type="checkbox" name="selected[]" value="<%=member%>">
+      <span class="detailsValue" ><%=member%></span><br>
+
+    <%});%>
+    <br>
+    <button type="submit" name="update" class="dashButtons2">Update attendance list</button>
+  </form>
+</div>
+
+<div class="detailsContainer">
+  <h3 class="detailsHeading">ATTENDED</h3><br>
+  <%event.aList.forEach(function(member){%>
+    <span class="detailsValue" style="margin-left:0;"><%=member%></span><br>
+  <%});%>
+
+</div>
+
+
+<%-include("partials/footer")%>

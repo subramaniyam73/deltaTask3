@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delta Task-3</title>
+
+    <style>
+        body {
+            background-color: #272727;
+            color: white;
+            text-align: center;
+        }
+        .pageHeading{
+            font-size: 500%;
+            text-align: center;
+            font-family: 'Roboto',sans-serif;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            color:white;
+        }
+        .dashButtons{
+            display: inline-block;
+            font-size: 150%;
+            width: 20%;
+            background-color: blue;
+            color: white;
+            box-sizing: border-box;
+            padding: 10px 10px;
+            font-family: 'Roboto',sans-serif;
+            text-decoration: none;
+            border-radius: 5px;
+            outline:none;
+            border: none;
+            margin-bottom: 70px;
+        }
+        .dashButtons:hover{
+            background-color: red;
+        }
+        .detailsContainer3{
+            border-radius: 0;
+            border: solid 10px #393e46;
+            width: 75%;
+            margin: 25px auto;
+            text-align: left;
+            padding-bottom: 20px;
+            padding-top: 20px;
+            text-align: center;
+        }
+        .detailsHeading3{
+            display: inline-block;
+            font-size: 150%;
+            font-family: 'Roboto',sans-serif;
+            margin-left: 20px;
+            line-height: 1.6;
+        }
+        .detailsValue3{
+            display: inline-block;
+            font-size: 150%;
+            font-family: 'Roboto',sans-serif;
+            color: #5fdde5;
+            margin: 0;
+            margin-left: 20px;
+            line-height: 1.6;
+
+        }
+        .templateFont{
+            font-size: 150%;
+            font-family: 'Roboto',sans-serif;
+            color: white;
+            line-height: 1.6;
+
+        }
+        .templateFont2{
+            font-size: 150%;
+            font-family: 'Roboto',sans-serif;
+            color:#5fdde5;
+            line-height: 1.6;
+        }
+        .imageBox{
+            width: 500px;
+            height: 500px;
+            margin: 0;
+            padding: 0;
+            margin: 15px auto;
+            border: solid 5px white;
+        }
+        #uploadImage{
+            position: relative;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="pageHeading">Invitation</h1>
+    <div class="totalBox">
+
+        <div class="detailsContainer3">
+            <span class="detailsHeading3">Event Date:</span>
+            <p class="detailsValue3" ><%=event.dateString%></p><br>
+            <span class="detailsHeading3">Event Time:</span>
+            <p class="detailsValue3" ><%=event.time%></p><br>
+            <span class="detailsHeading3">Deadline:</span>
+            <p class="detailsValue3" ><%=event.deadlineString%></p><br>
+            <span class="detailsHeading3">Host:</span>
+            <p class="detailsValue3" ><%=event.hostMail%></p>
+
+        </div>
+        <div class="imageBox">
+            <img src="cid:theUploaded@Image" class="uploadImage" width="500" height="500" style="object-fit:<%=event.objectFit%>;">
+        </div>
+        <%-include('partials/block')%>
+        <a href="http://localhost:3000/events/<%=event._id%>" class="dashButtons" >Open the Event Page</a>
+
+    </div>
+
+</body>
+</html>
